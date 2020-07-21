@@ -91,8 +91,9 @@ group by id_bon having sum(qte)>25;
 
 
 q. Calculez le coût total des commandes effectuées sur le mois d’avril 
-SELECT sum(A.prix * C.qte) as cout from bon as b INNER join compo as c on b.id = c.id_bon
-INNER JOIN article as a on a.id=c.id_art
-WHERE month (b.date_cmde) = 4
+SELECT SUM(A.prix*C.qte) as cout FROM bon as B 
+INNER JOIN compo as C ON B.id=C.id_bon
+INNER JOIN article as A ON A.id=C.id_art 
+WHERE month(B.date_cmde)=4
 
 
